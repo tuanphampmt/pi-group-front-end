@@ -14,40 +14,40 @@ function SectionCounterComponent(props) {
           <div className="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div className="block-18 bg-light">
               <div className="text">
-                <strong className="number" data-number={1100}>
+                <strong className="number" data-number={24260}>
                   0
                 </strong>
-                <span>Copies Sold</span>
+                <span>Thành viên</span>
               </div>
             </div>
           </div>
           <div className="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div className="block-18 bg-light">
               <div className="text">
-                <strong className="number" data-number={1200}>
+                <strong className="number" data-number={12}>
                   0
                 </strong>
-                <span>Copies Released</span>
+                <span>Khoá học</span>
               </div>
             </div>
           </div>
           <div className="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div className="block-18 bg-light">
               <div className="text">
-                <strong className="number" data-number={340}>
+                <strong className="number" data-number={10}>
                   0
                 </strong>
-                <span>Cup Of Coffee</span>
+                <span>Admin</span>
               </div>
             </div>
           </div>
           <div className="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div className="block-18 bg-light">
               <div className="text">
-                <strong className="number" data-number={12000}>
+                <strong className="number" data-number={2}>
                   0
                 </strong>
-                <span>Happy Readers</span>
+                <span>Sách</span>
               </div>
             </div>
           </div>

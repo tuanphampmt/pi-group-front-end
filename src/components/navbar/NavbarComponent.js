@@ -43,7 +43,7 @@ function NavbarComponent(props) {
             </li>
             <li className="nav-item">
               <a href="#testimonial-section" className="nav-link">
-                <span>Đánh giá</span>
+                <span>Nhận xét</span>
               </a>
             </li>
             <li className="nav-item">
@@ -53,7 +53,7 @@ function NavbarComponent(props) {
             </li>
             <li className="nav-item">
               <a href="#author-section" className="nav-link">
-                <span>Author</span>
+                <span>Giới thiệu</span>
               </a>
             </li>
             <li className="nav-item">

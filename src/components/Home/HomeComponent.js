@@ -2,7 +2,6 @@ import React , {useEffect}from "react";
 import PropTypes from "prop-types";
 import NavbarComponent from "../navbar/NavbarComponent";
 import HeroWrapComponent from "../hero-wrap/HeroWrapComponent";
-import FtcoNoptComponent from "../ftco-no-pt/FtcoNoptComponent";
 import AboutSectionComponent from "../about-section/AboutSectionComponent";
 import SectionCounterComponent from "../section-counter/SectionCounterComponent";
 import ChapterSectionComponent from "../chapter-section/ChapterSectionComponent";
@@ -26,7 +25,6 @@ function HomeComponent(props) {
       <AboutSectionComponent />
       <SectionCounterComponent />
       <ChapterSectionComponent />
-      <FtcoNoptComponent />
       <TestimonialSectionComponent />
       <ProjectsSectionComponent />
       <AuthorSectionComponent />

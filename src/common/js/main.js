@@ -98,7 +98,7 @@ export const main1 = () => {
       loop: true,
       autoplay: true,
       autoplaySpeed: 2000,
-      items: 1,
+      items: 2,
       margin: 30,
       stagePadding: 0,
       nav: false,
@@ -199,7 +199,6 @@ export const main1 = () => {
           $(".number").each(function () {
             var $this = $(this),
               num = $this.data("number");
-            console.log(num);
             $this.animateNumber(
               {
                 number: num,

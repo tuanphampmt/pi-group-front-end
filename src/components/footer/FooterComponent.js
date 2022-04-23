@@ -10,10 +10,9 @@ function FooterComponent(props) {
         <div className="row mb-5">
           <div className="col-md">
             <div className="ftco-footer-widget mb-4">
-              <h2 className="ftco-heading-2">About</h2>
+              <h2 className="ftco-heading-2">Giới thiệu</h2>
               <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
+              Nhóm Pi là nơi giao lưu của các thần đồng toán học, chúa tể của những con số, kẻ hủy diệt phương trình tương lai
               </p>
               <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li className="ftco-animate">
@@ -22,7 +21,7 @@ function FooterComponent(props) {
                   </a>
                 </li>
                 <li className="ftco-animate">
-                  <a href="#">
+                  <a href="https://www.facebook.com/groups/pigroup.pmt317"  target="_blank" rel="noopener noreferrer">
                     <span className="fa fa-facebook" />
                   </a>
                 </li>
@@ -36,63 +35,60 @@ function FooterComponent(props) {
           </div>
           <div className="col-md">
             <div className="ftco-footer-widget mb-4 ml-md-4">
-              <h2 className="ftco-heading-2">Links</h2>
+              <h2 className="ftco-heading-2">Về Nhóm Pi</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#">Liên hệ</a>
                 </li>
                 <li>
-                  <a href="#">About</a>
+                  <a href="#">Khoá học</a>
                 </li>
                 <li>
-                  <a href="#">Chapter</a>
+                  <a href="#">Giới thiệu</a>
                 </li>
                 <li>
-                  <a href="#">Reviews</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
+                  <a href="#">Chính sách miễn giảm học phí</a>
                 </li>
               </ul>
             </div>
           </div>
           <div className="col-md">
             <div className="ftco-footer-widget mb-4">
-              <h2 className="ftco-heading-2">Services</h2>
+              <h2 className="ftco-heading-2">Hỗ trợ</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#">Experience</a>
+                  <a href="#">Câu hỏi bài tập</a>
                 </li>
                 <li>
-                  <a href="#">Marketing Goals</a>
+                  <a href="#">Thi thử online</a>
                 </li>
                 <li>
-                  <a href="#">Targetting Vission</a>
+                  <a href="#">Cách đăng ký khoá học</a>
                 </li>
               </ul>
             </div>
           </div>
           <div className="col-md">
             <div className="ftco-footer-widget mb-4">
-              <h2 className="ftco-heading-2">Have a Questions?</h2>
+              <h2 className="ftco-heading-2">Liên hệ</h2>
               <div className="block-23 mb-3">
                 <ul>
                   <li>
                     <span className="icon fa fa-map-marker" />
                     <span className="text">
-                      203 Fake St. Mountain View, San Francisco, California, USA
+                      Đà nẵng
                     </span>
                   </li>
                   <li>
                     <a href="#">
                       <span className="icon fa fa-phone" />
-                      <span className="text">+2 392 3929 210</span>
+                      <span className="text">0777561933</span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
                       <span className="icon fa fa-paper-plane" />
-                      <span className="text">info@yourdomain.com</span>
+                      <span className="text">tuanpham31798@gmail.com</span>
                     </a>
                   </li>
                 </ul>
@@ -107,7 +103,7 @@ function FooterComponent(props) {
               Copyright © All rights reserved | This template is made with{" "}
               <i className="fa fa-heart" aria-hidden="true" /> by{" "}
               <a href="https://colorlib.com" target="_blank">
-                Colorlib
+                Pi Group
               </a>
               {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
             </p>

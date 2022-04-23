@@ -12,7 +12,7 @@ function ContactSectionComponent(props) {
       <div className="container">
         <div className="row justify-content-center mb-5 pb-3">
           <div className="col-md-7 heading-section text-center ftco-animate">
-            <h2 className="mb-4">Contact Me</h2>
+            <h2 className="mb-4">Liên hệ</h2>
             <p>
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia
@@ -26,8 +26,8 @@ function ContactSectionComponent(props) {
                 <span className="fa fa-map-marker" />
               </div>
               <div>
-                <h3 className="mb-4">Address</h3>
-                <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+                <h3 className="mb-4">Địa chỉ</h3>
+                <p>Đà Nẵng</p>
               </div>
             </div>
           </div>
@@ -37,9 +37,9 @@ function ContactSectionComponent(props) {
                 <span className="fa fa-phone" />
               </div>
               <div>
-                <h3 className="mb-4">Contact Number</h3>
+                <h3 className="mb-4">Số điện thoại</h3>
                 <p>
-                  <a href="tel://1234567920">+ 1235 2355 98</a>
+                  <a href="tel://1234567920">0777561933</a>
                 </p>
               </div>
             </div>
@@ -50,9 +50,9 @@ function ContactSectionComponent(props) {
                 <span className="fa fa-paper-plane" />
               </div>
               <div>
-                <h3 className="mb-4">Email Address</h3>
+                <h3 className="mb-4">Địa chỉ email</h3>
                 <p>
-                  <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+                  <a href="mailto:info@yoursite.com">tuanpham31798@gmail.com</a>
                 </p>
               </div>
             </div>
@@ -63,9 +63,9 @@ function ContactSectionComponent(props) {
                 <span className="fa fa-globe" />
               </div>
               <div>
-                <h3 className="mb-4">Website</h3>
+                <h3 className="mb-4">Group Facebook</h3>
                 <p>
-                  <a href="#">yoursite.com</a>
+                  <a href="#">Nhóm Pi</a>
                 </p>
               </div>
             </div>
@@ -78,21 +78,21 @@ function ContactSectionComponent(props) {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Your Name"
+                  placeholder="Tên của bạn"
                 />
               </div>
               <div className="form-group">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Your Email"
+                  placeholder="Email của bạn"
                 />
               </div>
               <div className="form-group">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Subject"
+                  placeholder="Nội dung"
                 />
               </div>
               <div className="form-group">
@@ -102,7 +102,7 @@ function ContactSectionComponent(props) {
                   cols={30}
                   rows={7}
                   className="form-control"
-                  placeholder="Message"
+                  placeholder="Tin nhắn"
                   defaultValue={""}
                 />
               </div>

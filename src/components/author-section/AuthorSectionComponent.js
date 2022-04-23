@@ -16,7 +16,7 @@ function AuthorSectionComponent(props) {
               <div className="overlay" />
               <div
                 className="img d-flex align-self-stretch align-items-center"
-                style={{ backgroundImage: "url(images/about.jpg)" }}
+                style={{ backgroundImage: "url(images/pmt.jpeg)" }}
               ></div>
             </div>
           </div>
@@ -26,34 +26,35 @@ function AuthorSectionComponent(props) {
                 <div className="row justify-content-start pb-3">
                   <div className="col-md-12 heading-section ftco-animate">
                     <span className="subheading">
-                      Know More About The Author
+                    Administrator của NHÓM PI
                     </span>
-                    <h2 className="mb-4">Franklin Henderson</h2>
+                    <h2 className="mb-4">Phạm Minh Tuấn</h2>
                     <p>
-                      A small river named Duden flows by their place and
-                      supplies it with the necessary regelialia.
+                      Anh tốt nghiệp ngành CNTT với niềm đam mê Toán vô tận. Anh luôn yêu để sống, luôn sống để học Toán, luôn học Toán để yêu.
+
                     </p>
                     <ul className="about-info mt-4 px-md-0 px-2">
                       <li className="d-flex">
-                        <span>Name:</span> <span>Franklin Henderson</span>
+                        <span>Họ và tên:</span> <span>Phạm Minh Tuấn</span>
                       </li>
                       <li className="d-flex">
-                        <span>Date of birth:</span>{" "}
-                        <span>November 28, 1980</span>
+                        <span>Ngày sinh:</span>{" "}
+                        <span>Ngày 31 tháng 7 năm 1996</span>
                       </li>
                       <li className="d-flex">
-                        <span>Address:</span>{" "}
-                        <span>San Francisco CA 97987 USA</span>
+                        <span>Địa chỉ:</span>{" "}
+                        <span>Đà Nẵng</span>
                       </li>
                       <li className="d-flex">
-                        <span>Zip code:</span> <span>1000</span>
+                        <span>Nghề nghiệp:</span>{" "}
+                        <span>Software Engineer</span>
                       </li>
                       <li className="d-flex">
                         <span>Email:</span>{" "}
-                        <span>franklinsample@gmail.com</span>
+                        <span>tuanpham31798@gmail.com</span>
                       </li>
                       <li className="d-flex">
-                        <span>Phone: </span> <span>+1-2234-5678-9-0</span>
+                        <span>Số điện thoại: </span> <span>0777561933</span>
                       </li>
                     </ul>
                   </div>
@@ -61,10 +62,7 @@ function AuthorSectionComponent(props) {
                 <div className="counter-wrap ftco-animate d-flex mt-md-3">
                   <div className="text">
                     <p className="mb-4 btn-custom">
-                      <span className="number" data-number={120}>
-                        0
-                      </span>
-                      <span>View All Books</span>
+                      <span>Theo dõi</span>
                     </p>
                   </div>
                 </div>

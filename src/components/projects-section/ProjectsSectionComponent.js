@@ -9,8 +9,8 @@ function ProjectsSectionComponent(props) {
       <div className="container">
         <div className="row no-gutters justify-content-center pb-5">
           <div className="col-md-12 heading-section text-center ftco-animate">
-            <span className="subheading">Projects</span>
-            <h2 className="mb-4">My Other Books</h2>
+            <span className="subheading">Biên soạn: Phạm Minh Tuấn</span>
+            <h2 className="mb-4">Sách của Pi</h2>
           </div>
         </div>
         <div className="row">

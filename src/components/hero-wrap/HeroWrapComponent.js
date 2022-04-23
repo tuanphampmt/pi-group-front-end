@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function HeroWrapComponent(props) {
   return (
@@ -19,11 +19,11 @@ function HeroWrapComponent(props) {
               <p>
               Nhóm Pi mang sứ mệnh dìu dắt các em đến gần hơn với cánh cổng đại học. Nhóm mang giá trị cốt lõi của một người lái đò và luôn gắn liền với “sự hoàn hảo, niềm đam mê và trách nhiệm".
               </p>
-              <p>
-                <a href="#" className="btn btn-primary py-3 px-4">
-                  Buy Now For $22.78
-                </a>
-              </p>
+              
+                <Link to="/login" className="btn btn-primary py-3 px-4">
+                  Đăng nhập
+                </Link>
+              
             </div>
           </div>
         </div>
@@ -32,6 +32,5 @@ function HeroWrapComponent(props) {
   );
 }
 
-HeroWrapComponent.propTypes = {};
 
 export default HeroWrapComponent;

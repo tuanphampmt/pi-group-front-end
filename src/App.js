@@ -1,10 +1,8 @@
-import HomeComponent from './components/Home/HomeComponent';
-import './common/js/loader'
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
-      <HomeComponent/>
     </div>
   );
 }

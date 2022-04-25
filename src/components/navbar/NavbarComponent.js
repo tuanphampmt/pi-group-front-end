@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function NavbarComponent(props) {
   const {} = props;
@@ -10,9 +10,9 @@ function NavbarComponent(props) {
       id="ftco-navbar"
     >
       <div className="container">
-        <a className="navbar-brand" href="index.html">
-          Pi Group<span>.</span>
-        </a>
+      <a className="navbar-brand" href="/home">
+            Pi Group<span>.</span>
+          </a>
         <button
           className="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
           type="button"
@@ -31,6 +31,13 @@ function NavbarComponent(props) {
                 <span>Trang chủ</span>
               </a>
             </li>
+            
+            <li className="nav-item">
+              <a href="/test-online" className="nav-link">
+                <span>Thi thử Online</span>
+              </a>
+            </li>
+
             <li className="nav-item">
               <a href="#about-section" className="nav-link">
                 <span>Giới thiệu</span>
@@ -53,7 +60,7 @@ function NavbarComponent(props) {
             </li>
             <li className="nav-item">
               <a href="#author-section" className="nav-link">
-                <span>Giới thiệu</span>
+                <span>Admin</span>
               </a>
             </li>
             <li className="nav-item">
@@ -68,6 +75,6 @@ function NavbarComponent(props) {
   );
 }
 
-NavbarComponent.propTypes = {};
+
 
 export default NavbarComponent;

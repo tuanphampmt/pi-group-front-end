@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { checkTokenExpirationMiddleware } from "../../services/auth.service";
 function HeroWrapComponent(props) {
+  const auth = checkTokenExpirationMiddleware();
   return (
     <section className="hero-wrap js-fullheight">
       <div className="overlay" />
@@ -14,16 +15,24 @@ function HeroWrapComponent(props) {
           />
           <div className="one-forth d-flex align-items-center ftco-animate js-fullheight">
             <div className="text mt-5">
-              <span className="subheading">THE BEST OR NOTHING - TỐT NHẤT HOẶC KHÔNG CÓ GÌ</span>
+              <span className="subheading">
+                THE BEST OR NOTHING - TỐT NHẤT HOẶC KHÔNG CÓ GÌ
+              </span>
               <h1>Nhóm Pi - Group Luyện Đề Thi Thử Nâng Cao ︵✿ρмт‿✿</h1>
               <p>
-              Nhóm Pi mang sứ mệnh dìu dắt các em đến gần hơn với cánh cổng đại học. Nhóm mang giá trị cốt lõi của một người lái đò và luôn gắn liền với “sự hoàn hảo, niềm đam mê và trách nhiệm".
+                Nhóm Pi mang sứ mệnh dìu dắt các em đến gần hơn với cánh cổng
+                đại học. Nhóm mang giá trị cốt lõi của một người lái đò và luôn
+                gắn liền với “sự hoàn hảo, niềm đam mê và trách nhiệm".
               </p>
-              
+              {auth ? (
+                <Link to="/login" className="btn btn-primary py-3 px-4">
+                  Đăng xuất
+                </Link>
+              ) : (
                 <Link to="/login" className="btn btn-primary py-3 px-4">
                   Đăng nhập
                 </Link>
-              
+              )}
             </div>
           </div>
         </div>
@@ -31,6 +40,5 @@ function HeroWrapComponent(props) {
     </section>
   );
 }
-
 
 export default HeroWrapComponent;

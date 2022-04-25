@@ -7,7 +7,7 @@ function FooterComponent(props) {
   return (
     <footer className="ftco-footer ftco-section">
       <div className="container">
-        <div className="row mb-5">
+        <div className="row">
           <div className="col-md">
             <div className="ftco-footer-widget mb-4">
               <h2 className="ftco-heading-2">Giới thiệu</h2>
@@ -17,17 +17,17 @@ function FooterComponent(props) {
               <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="fa fa-twitter" />
+                    <span className="fab fa-twitter" />
                   </a>
                 </li>
                 <li className="ftco-animate">
                   <a href="https://www.facebook.com/groups/pigroup.pmt317"  target="_blank" rel="noopener noreferrer">
-                    <span className="fa fa-facebook" />
+                    <span className="fab fa-facebook" />
                   </a>
                 </li>
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="fa fa-instagram" />
+                    <span className="fab fa-instagram" />
                   </a>
                 </li>
               </ul>

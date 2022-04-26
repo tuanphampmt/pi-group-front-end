@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu';
 
 function NavbarComponent(props) {
   const {} = props;
@@ -22,7 +23,7 @@ function NavbarComponent(props) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="oi oi-menu" /> Menu
+          <MenuIcon/>
         </button>
         <div className="collapse navbar-collapse" id="ftco-nav">
           <ul className="navbar-nav nav ml-auto">

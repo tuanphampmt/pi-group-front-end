@@ -5,11 +5,14 @@ import EmailIcon from "@mui/icons-material/Email";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Tooltip from "@mui/material/Tooltip";
 import { auth, db } from "../../common/config/firebaseConfig";
+import { useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, query, getDocs, where } from "firebase/firestore";
 import NavbarPublic from "../navbar/NavbarPublic";
 
 function RegisterFormComponent(props) {
@@ -19,6 +22,8 @@ function RegisterFormComponent(props) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  let navigate = useNavigate();
+  const googleProvider = new GoogleAuthProvider();
 
   const validatePassword = () => {
     if (password === "" || confirmPassword === "") {
@@ -49,6 +54,8 @@ function RegisterFormComponent(props) {
 
   const handleSubmitRegister = async (event) => {
     event.preventDefault();
+    setError("");
+    setSuccessMessage("");
     try {
       if (validateEmail() && validatePassword()) {
         const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -70,6 +77,38 @@ function RegisterFormComponent(props) {
     setEmail("");
     setPassword("");
     setConfirmPassword("");
+  };
+
+  const signInWithGoogle = async (event) => {
+    event.preventDefault();
+    setError("");
+    setSuccessMessage("");
+    try {
+      const res = await signInWithPopup(auth, googleProvider);
+      const user = res.user;
+      const q = query(collection(db, "users"), where("uid", "==", user.uid));
+      const docs = await getDocs(q);
+      if (docs.docs.length === 0) {
+        await addDoc(collection(db, "users"), {
+          uid: user.uid,
+          name: user.displayName,
+          authProvider: "google",
+          email: user.email,
+        });
+      }
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ email: user.email, name: user.displayName })
+      );
+      localStorage.setItem(
+        "access-token",
+        JSON.stringify(res.user.accessToken)
+      );
+      navigate("/test-online");
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    }
   };
   return (
     <>
@@ -176,6 +215,25 @@ function RegisterFormComponent(props) {
                       value="Đăng ký"
                       className="btn btn-block btn-primary"
                     />
+
+                    <span className="d-block text-left my-4 text-muted">
+                      — or login with —
+                    </span>
+                    <div className="social-login">
+                      <a href="#facebook" className="facebook">
+                        <i className="fa-brands fa-facebook-f"></i>
+                      </a>
+                      <a href="#twitter" className="twitter">
+                        <i className="fa-brands fa-twitter"></i>
+                      </a>
+                      <a
+                        href="#google"
+                        className="google"
+                        onClick={signInWithGoogle}
+                      >
+                        <i className="fa-brands fa-google"></i>
+                      </a>
+                    </div>
                   </form>
                 </div>
               </div>

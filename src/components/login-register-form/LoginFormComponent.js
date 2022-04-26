@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../common/config/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import NavbarPublic from "../navbar/NavbarPublic";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { query, getDocs, collection, where, addDoc } from "firebase/firestore";
 
@@ -17,7 +16,6 @@ function LoginFormComponent(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
   const googleProvider = new GoogleAuthProvider();
 
   let navigate = useNavigate();
@@ -40,6 +38,7 @@ function LoginFormComponent(props) {
 
   const signInWithGoogle = async (event) => {
     event.preventDefault();
+    setError("");
     try {
       const res = await signInWithPopup(auth, googleProvider);
       const user = res.user;
@@ -52,17 +51,16 @@ function LoginFormComponent(props) {
           authProvider: "google",
           email: user.email,
         });
-      } else {
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ email: user.email, name: user.displayName })
-        );
-        localStorage.setItem(
-          "access-token",
-          JSON.stringify(res.user.accessToken)
-        );
-        navigate("/test-online");
       }
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ email: user.email, name: user.displayName })
+      );
+      localStorage.setItem(
+        "access-token",
+        JSON.stringify(res.user.accessToken)
+      );
+      navigate("/home");
     } catch (err) {
       console.error(err);
       setError("Tài khoản của bạn chưa được xác thực.");
@@ -71,6 +69,7 @@ function LoginFormComponent(props) {
 
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+    setError("");
     if (validateEmail() && validatePassword()) {
       signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
@@ -80,7 +79,7 @@ function LoginFormComponent(props) {
               "access-token",
               JSON.stringify(res.user.accessToken)
             );
-            navigate("/test-online");
+            navigate("/home");
           } else {
             setError("Tài khoản của bạn chưa được xác thực.");
           }
@@ -113,7 +112,7 @@ function LoginFormComponent(props) {
                     </p>
                   </div>
                   {error && <span className="message-error">{error}</span>}
-                  <form onSubmit={handleSubmitLogin}>
+                  <form onSubmit={handleSubmitLogin} className="mt-2">
                     <div className="form-group first">
                       <label htmlFor="username">
                         <Tooltip
@@ -170,26 +169,24 @@ function LoginFormComponent(props) {
                       className="btn btn-block btn-primary"
                     />
 
-                    <>
-                      <span className="d-block text-left my-4 text-muted">
-                        — or login with —
-                      </span>
-                      <div className="social-login">
-                        <a href="#facebook" className="facebook">
-                          <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="#twitter" className="twitter">
-                          <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a
-                          href="#google"
-                          className="google"
-                          onClick={signInWithGoogle}
-                        >
-                          <i class="fa-brands fa-google"></i>
-                        </a>
-                      </div>
-                    </>
+                    <span className="d-block text-left my-4 text-muted">
+                      — or login with —
+                    </span>
+                    <div className="social-login">
+                      <a href="#facebook" className="facebook">
+                        <i className="fa-brands fa-facebook-f"></i>
+                      </a>
+                      <a href="#twitter" className="twitter">
+                        <i className="fa-brands fa-twitter"></i>
+                      </a>
+                      <a
+                        href="#google"
+                        className="google"
+                        onClick={signInWithGoogle}
+                      >
+                        <i className="fa-brands fa-google"></i>
+                      </a>
+                    </div>
                   </form>
                 </div>
               </div>

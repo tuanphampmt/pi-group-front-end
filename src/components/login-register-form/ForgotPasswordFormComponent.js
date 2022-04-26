@@ -1,11 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FooterComponent from "../footer/FooterComponent";
 import NavbarPublic from "../navbar/NavbarPublic";
+import Tooltip from "@mui/material/Tooltip";
+import EmailIcon from "@mui/icons-material/Email";
+import { auth, db } from "../../common/config/firebaseConfig";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 function ForgotPasswordFormComponent(props) {
   const {} = props;
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
+  const validateEmail = () => {
+    if (email === "") {
+      setError("Email là bắt buộc.");
+      return false;
+    }
+    const match = email.match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+    if (!match) {
+      setError("Email không hợp lệ.");
+      return false;
+    }
+    return true;
+  };
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccessMessage("");
+    try {
+      if (validateEmail()) {
+        await sendPasswordResetEmail(auth, email);
+        setSuccessMessage(
+          "Đã gửi liên kết đặt lại mật khẩu đến email của bạn."
+        );
+      }
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    }
+  };
   return (
     <>
       <NavbarPublic />
@@ -28,13 +66,28 @@ function ForgotPasswordFormComponent(props) {
                       Để lấy lại mật khẩu các em cần phải điền Email của mình.
                     </p>
                   </div>
-                  <form action="#" method="post">
+                  {error && <span className="message-error">{error}</span>}
+                  {successMessage && (
+                    <span className="message-success">{successMessage}</span>
+                  )}
+                  <form onSubmit={handleResetPassword} className="mt-2">
                     <div className="form-group first mb-4 last">
-                      <label htmlFor="username">Email</label>
+                      <label htmlFor="username">
+                        <Tooltip
+                          title={
+                            <span style={{ fontSize: "15px" }}>Email</span>
+                          }
+                          placement="top"
+                        >
+                          <EmailIcon />
+                        </Tooltip>
+                      </label>
                       <input
                         type="text"
                         className="form-control"
                         id="username"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                     <div className="d-flex mb-5 align-items-center">

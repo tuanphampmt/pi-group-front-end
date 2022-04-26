@@ -17,18 +17,18 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-1.jpg)" }}
+              style={{ backgroundImage: "url(images/sach-de.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
                 <h3>
-                  <a href="#">You Are Your Ony Limit</a>
+                  <a href="#">BỘ ĐỀ THI THỬ TOÁN NÂNG CAO 2023</a>
                 </h3>
-                <span>Romance</span>
+                <span>150,000 VNĐ</span>
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          {/* <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
               style={{ backgroundImage: "url(images/book-2.jpg)" }}
@@ -125,7 +125,7 @@ function ProjectsSectionComponent(props) {
                 <span>Romance</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

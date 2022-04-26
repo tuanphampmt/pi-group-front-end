@@ -12,17 +12,6 @@ function NavbarPublic(props) {
           <a className="navbar-brand" href="/home">
             Pi Group<span>.</span>
           </a>
-          <button
-            className="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
-            type="button"
-            data-toggle="collapse"
-            data-target="#ftco-nav"
-            aria-controls="ftco-nav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="oi oi-menu" /> Menu
-          </button>
         </div>
       </nav>
     )

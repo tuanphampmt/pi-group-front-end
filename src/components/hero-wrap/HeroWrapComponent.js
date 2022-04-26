@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { checkTokenExpirationMiddleware } from "../../services/auth.service";
+import { signOut } from "firebase/auth";
+import { auth } from "../../common/config/firebaseConfig";
 function HeroWrapComponent(props) {
-  const auth = checkTokenExpirationMiddleware();
+  const authService = checkTokenExpirationMiddleware();
+
+  const logout = () => {
+    signOut(auth);
+    localStorage.clear();
+  };
   return (
     <section className="hero-wrap js-fullheight">
       <div className="overlay" />
@@ -24,8 +31,12 @@ function HeroWrapComponent(props) {
                 đại học. Nhóm mang giá trị cốt lõi của một người lái đò và luôn
                 gắn liền với “sự hoàn hảo, niềm đam mê và trách nhiệm".
               </p>
-              {auth ? (
-                <Link to="/login" className="btn btn-primary py-3 px-4">
+              {authService ? (
+                <Link
+                  to="/login"
+                  className="btn btn-primary py-3 px-4"
+                  onClick={logout}
+                >
                   Đăng xuất
                 </Link>
               ) : (

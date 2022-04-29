@@ -35,7 +35,7 @@ function HelloTestComponent(props) {
         <div className="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
           <img
             className="one-third js-fullheight align-self-end order-md-last img-fluid"
-            src="images/undraw_book_lover_mkck.svg"
+            src="/images/undraw_book_lover_mkck.svg"
             alt=""
           />
           <div className="one-forth d-flex align-items-center ftco-animate js-fullheight">

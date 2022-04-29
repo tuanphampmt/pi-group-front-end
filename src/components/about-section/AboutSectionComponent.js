@@ -13,7 +13,7 @@ function AboutSectionComponent(props) {
               <div className="overlay" />
               <div
                 className="img d-flex align-self-stretch align-items-center"
-                style={{ backgroundImage: "url(images/logo-pi.jpeg)" }}
+                style={{ backgroundImage: "url(/images/logo-pi.jpeg)" }}
               ></div>
             </div>
           </div>

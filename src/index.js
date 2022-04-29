@@ -14,6 +14,7 @@ import PublicRoute from "./routes/PublicRoute";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import HomeTestOnlineComponent from "./components/test-online/HomeTestOnlineComponent";
 import "./common/js/loader";
+import HomeAdminComponent from "./components/admin/HomeAdminComponent";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,23 +22,32 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        {/* PrivateRoute */}
-        <Route element={<PrivateRoute />}>
-          <Route path="/test-online" element={<HomeTestOnlineComponent />} />
+        {/* PrivateRoute - user */}
+        <Route element={<PrivateRoute role="user" />}>
+          <Route path="/user/test-online" element={<HomeTestOnlineComponent />} />
         </Route>
-        {/* PublicRoute */}
-        <Route element={<PublicRoute />}>
-          <Route path="/login" element={<LoginFormComponent />} />
-          <Route path="/register" element={<RegisterFormComponent />} />
+        {/* PublicRoute - user*/}
+        <Route element={<PublicRoute role="user"/>}>
+          <Route path="/user/login" element={<LoginFormComponent />} />
+          <Route path="/user/register" element={<RegisterFormComponent />} />
           <Route
-            path="/forgot-pass"
+            path="/user/forgot-password"
             element={<ForgotPasswordFormComponent />}
           />
         </Route>
-        {/* ProtectedRoute */}
+        {/* ProtectedRoute - user */}
         <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<HomeComponent />} />
+          <Route path="/" element={<Navigate to="/user/home" />} />
+          <Route path="/user/home" element={<HomeComponent />} />
+        </Route>
+
+        {/* PrivateRoute - admin */}
+        <Route element={<PrivateRoute role="admin" />}>
+          <Route path="/admin/home" element={<HomeAdminComponent />} />
+        </Route>
+        {/* PublicRoute - admin*/}
+        <Route element={<PublicRoute role="admin"/>}>
+          <Route path="/admin/login" element={<LoginFormComponent />} />
         </Route>
       </Routes>
     </BrowserRouter>

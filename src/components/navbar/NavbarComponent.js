@@ -34,7 +34,7 @@ function NavbarComponent(props) {
             </li>
             
             <li className="nav-item">
-              <a href="/test-online" className="nav-link">
+              <a href="/user/test-online" className="nav-link">
                 <span>Thi thử Online</span>
               </a>
             </li>

@@ -64,7 +64,7 @@ function LoginFormComponent(props) {
           JSON.stringify({ email: user.email, name: user.displayName })
         );
         localStorage.setItem("access-token", JSON.stringify(res.user.accessToken));
-        navigate("/home");
+        navigate("/user/home");
       }
     } catch (err) {
       console.error(err);
@@ -98,7 +98,7 @@ function LoginFormComponent(props) {
           "access-token",
           JSON.stringify(res.user.accessToken)
         );
-        navigate("/home");
+        navigate("/user/home");
       }
     } catch (err) {
       console.error(err);
@@ -118,7 +118,7 @@ function LoginFormComponent(props) {
               "access-token",
               JSON.stringify(res.user.accessToken)
             );
-            navigate("/home");
+            navigate("/user/home");
           } else {
             setError("Tài khoản của bạn chưa được xác thực.");
           }
@@ -138,7 +138,7 @@ function LoginFormComponent(props) {
           <div className="row">
             <div className="col-md-6">
               <img
-                src="images/undraw_remotely_2j6y.svg"
+                src="/images/undraw_remotely_2j6y.svg"
                 alt="Image"
                 className="img-fluid"
               />
@@ -195,12 +195,12 @@ function LoginFormComponent(props) {
                     </div>
                     <div className="d-flex mb-5 align-items-center">
                       <span className="mr-auto">
-                        <Link to="/register" className="forgot-pass">
+                        <Link to="/user/register" className="forgot-pass">
                           Đăng ký tài khoản
                         </Link>
                       </span>
                       <span className="ml-auto">
-                        <Link to="/forgot-pass" className="forgot-pass">
+                        <Link to="/user/forgot-password" className="forgot-pass">
                           Lấy lại mật khẩu
                         </Link>
                       </span>

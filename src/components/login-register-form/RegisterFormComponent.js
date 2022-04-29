@@ -11,7 +11,7 @@ import {
   sendEmailVerification,
   GoogleAuthProvider,
   signInWithPopup,
-  FacebookAuthProvider
+  FacebookAuthProvider,
 } from "firebase/auth";
 import { collection, addDoc, query, getDocs, where } from "firebase/firestore";
 import NavbarPublic from "../navbar/NavbarPublic";
@@ -106,7 +106,7 @@ function RegisterFormComponent(props) {
         "access-token",
         JSON.stringify(res.user.accessToken)
       );
-      navigate("/test-online");
+      navigate("/user/home");
     } catch (err) {
       console.error(err);
       setError(err.message);
@@ -135,15 +135,18 @@ function RegisterFormComponent(props) {
           "user",
           JSON.stringify({ email: user.email, name: user.displayName })
         );
-        localStorage.setItem("access-token", JSON.stringify(res.user.accessToken));
-        navigate("/home");
+        localStorage.setItem(
+          "access-token",
+          JSON.stringify(res.user.accessToken)
+        );
+        navigate("/user/home");
       }
     } catch (err) {
       console.error(err);
       setError(err.message);
     }
   };
-  
+
   return (
     <>
       <NavbarPublic />
@@ -152,7 +155,7 @@ function RegisterFormComponent(props) {
           <div className="row">
             <div className="col-md-6">
               <img
-                src="images/undraw_remotely_2j6y.svg"
+                src="/images/undraw_remotely_2j6y.svg"
                 alt="Image"
                 className="img-fluid"
               />
@@ -234,12 +237,15 @@ function RegisterFormComponent(props) {
 
                     <div className="d-flex mb-5 align-items-center">
                       <span className="mr-auto">
-                        <Link to="/login" className="forgot-pass">
+                        <Link to="/user/login" className="forgot-pass">
                           Đăng nhập
                         </Link>
                       </span>
                       <span className="ml-auto">
-                        <Link to="/forgot-pass" className="forgot-pass">
+                        <Link
+                          to="/user/forgot-password"
+                          className="forgot-pass"
+                        >
                           Lấy lại mật khẩu
                         </Link>
                       </span>
@@ -254,14 +260,14 @@ function RegisterFormComponent(props) {
                       — or login with —
                     </span>
                     <div className="social-login">
-                    <a
+                      <a
                         href="#facebook"
                         className="facebook"
                         onClick={signInWithFacebook}
                       >
                         <i className="fa-brands fa-facebook-f"></i>
                       </a>
-            
+
                       <a
                         href="#google"
                         className="google"

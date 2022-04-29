@@ -17,7 +17,7 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/sach-de.jpg)" }}
+              style={{ backgroundImage: "url(/images/sach-de.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
@@ -31,7 +31,7 @@ function ProjectsSectionComponent(props) {
           {/* <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-2.jpg)" }}
+              style={{ backgroundImage: "url(/images/book-2.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
@@ -45,7 +45,7 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-3.jpg)" }}
+              style={{ backgroundImage: "url(/images/book-3.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
@@ -59,7 +59,7 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-4.jpg)" }}
+              style={{ backgroundImage: "url(/images/book-4.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
@@ -73,7 +73,7 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-5.jpg)" }}
+              style={{ backgroundImage: "url(/images/book-5.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
@@ -87,7 +87,7 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-7.jpg)" }}
+              style={{ backgroundImage: "url(/images/book-7.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
@@ -101,7 +101,7 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-6.jpg)" }}
+              style={{ backgroundImage: "url(/images/book-6.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">
@@ -115,7 +115,7 @@ function ProjectsSectionComponent(props) {
           <div className="col-md-3">
             <div
               className="project img ftco-animate d-flex justify-content-center align-items-end"
-              style={{ backgroundImage: "url(images/book-8.jpg)" }}
+              style={{ backgroundImage: "url(/images/book-8.jpg)" }}
             >
               <div className="overlay" />
               <div className="text p-4">

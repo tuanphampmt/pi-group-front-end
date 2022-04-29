@@ -1,10 +1,16 @@
 import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
-import {checkTokenExpirationMiddleware} from "../services/auth.service"
+import { checkTokenExpirationMiddleware } from "../services/auth.service";
 
 function PublicRoute(props) {
+  const { role } = props;
   const auth = checkTokenExpirationMiddleware();
-  return auth ? <Navigate to="/home" /> : <Outlet />;
+  if (role === "admin") {
+    return auth ? <Navigate to="/admin/home" /> : <Outlet />;
+  }
+  if (role === "user") {
+    return auth ? <Navigate to="/user/home" /> : <Outlet />;
+  }
 }
 
 export default PublicRoute;

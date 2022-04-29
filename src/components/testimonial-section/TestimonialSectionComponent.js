@@ -12,7 +12,7 @@ function TestimonialSectionComponent(props) {
     >
       <div
         className="img img-bg border"
-        style={{ backgroundImage: "url(images/bg_4.jpg)" }}
+        style={{ backgroundImage: "url(/images/bg_4.jpg)" }}
       />
       <div className="overlay" />
       <div className="container">
@@ -42,7 +42,7 @@ function TestimonialSectionComponent(props) {
                     <div className="d-flex align-items-center">
                       <div
                         className="user-img"
-                        style={{ backgroundImage: "url(images/user-1.webp)" }}
+                        style={{ backgroundImage: "url(/images/user-1.webp)" }}
                       />
                       <div className="pl-3">
                         <p className="name">Ẩn danh</p>
@@ -83,7 +83,7 @@ function TestimonialSectionComponent(props) {
                     <div className="d-flex align-items-center">
                       <div
                         className="user-img"
-                        style={{ backgroundImage: "url(images/user-2.png)" }}
+                        style={{ backgroundImage: "url(/images/user-2.png)" }}
                       />
                       <div className="pl-3">
                         <p className="name">Ẩn danh</p>
@@ -128,7 +128,7 @@ function TestimonialSectionComponent(props) {
                     <div className="d-flex align-items-center">
                       <div
                         className="user-img"
-                        style={{ backgroundImage: "url(images/user-3.png)" }}
+                        style={{ backgroundImage: "url(/images/user-3.png)" }}
                       />
                       <div className="pl-3">
                         <p className="name">Ẩn danh</p>
@@ -163,7 +163,7 @@ function TestimonialSectionComponent(props) {
                     <div className="d-flex align-items-center">
                       <div
                         className="user-img"
-                        style={{ backgroundImage: "url(images/user-4.png)" }}
+                        style={{ backgroundImage: "url(/images/user-4.png)" }}
                       />
                       <div className="pl-3">
                         <p className="name">Ẩn danh</p>
@@ -198,7 +198,7 @@ function TestimonialSectionComponent(props) {
                     <div className="d-flex align-items-center">
                       <div
                         className="user-img"
-                        style={{ backgroundImage: "url(images/user-5.jpeg)" }}
+                        style={{ backgroundImage: "url(/images/user-5.jpeg)" }}
                       />
                       <div className="pl-3">
                         <p className="name">Ẩn danh</p>
@@ -233,7 +233,7 @@ function TestimonialSectionComponent(props) {
                     <div className="d-flex align-items-center">
                       <div
                         className="user-img"
-                        style={{ backgroundImage: "url(images/user-6.webp)" }}
+                        style={{ backgroundImage: "url(/images/user-6.webp)" }}
                       />
                       <div className="pl-3">
                         <p className="name">Ẩn danh</p>
@@ -275,7 +275,7 @@ function TestimonialSectionComponent(props) {
                     <div className="d-flex align-items-center">
                       <div
                         className="user-img"
-                        style={{ backgroundImage: "url(images/user-7.png)" }}
+                        style={{ backgroundImage: "url(/images/user-7.png)" }}
                       />
                       <div className="pl-3">
                         <p className="name">Ẩn danh</p>

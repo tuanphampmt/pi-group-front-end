@@ -94,7 +94,7 @@ function ChapterSectionComponent(props) {
                   <strong>Đây</strong> là hình ảnh khóa học PIMAX PLUS 2023:{" "}
                   <br />
                   <img
-                    src="images/pimax.png"
+                    src="/images/pimax.png"
                     alt="khoa-pimax"
                     width="100%"
                     style={{ marginTop: "20px" }}
@@ -114,7 +114,7 @@ function ChapterSectionComponent(props) {
                   <strong>Đây </strong>là hình ảnh KHÓA HỌC CÔNG PHÁ VD – VDC
                   MÔN TOÁN <br />
                   <img
-                    src="images/vd-vdc-toan.png"
+                    src="/images/vd-vdc-toan.png"
                     alt="khoa-vd-vdc-toan"
                     width="100%"
                     style={{ marginTop: "20px" }}
@@ -133,21 +133,21 @@ function ChapterSectionComponent(props) {
                       một khóa rất hay để các em tổng ôn kiến thức.
                       <div style={{ marginTop: "15px" }}>
                         <img
-                          src="images/chuyen-de.png"
+                          src="/images/chuyen-de.png"
                           alt="khoa-chuyen-de"
                           width="100%"
                         ></img>
                       </div>
                       <div style={{ marginTop: "20px" }}>
                         <img
-                          src="images/chuyen-de-1.png"
+                          src="/images/chuyen-de-1.png"
                           alt="khoa-chuyen-de"
                           width="100%"
                         ></img>
                       </div>
                       <div style={{ marginTop: "20px", marginBottom: "20px" }}>
                         <img
-                          src="images/chuyen-de-2.png"
+                          src="/images/chuyen-de-2.png"
                           alt="khoa-chuyen-de"
                           width="100%"
                         ></img>
@@ -175,7 +175,7 @@ function ChapterSectionComponent(props) {
                       <strong>TÀI LIỆU ĐỌC THÊM</strong>:
                       <div style={{ marginTop: "20px" }}>
                         <img
-                          src="images/doc-them.png"
+                          src="/images/doc-them.png"
                           alt="khoa-chuyen-de"
                           width="100%"
                         ></img>

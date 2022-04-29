@@ -52,7 +52,7 @@ function ForgotPasswordFormComponent(props) {
           <div className="row">
             <div className="col-md-6">
               <img
-                src="images/undraw_remotely_2j6y.svg"
+                src="/images/undraw_remotely_2j6y.svg"
                 alt="Image"
                 className="img-fluid"
               />
@@ -92,12 +92,12 @@ function ForgotPasswordFormComponent(props) {
                     </div>
                     <div className="d-flex mb-5 align-items-center">
                       <span className="mr-auto">
-                        <Link to="/login" className="forgot-pass">
+                        <Link to="/user/login" className="forgot-pass">
                           Đăng nhập
                         </Link>
                       </span>
                       <span className="ml-auto">
-                        <Link to="/register" className="forgot-pass">
+                        <Link to="/user/register" className="forgot-pass">
                           Đăng ký tài khoản
                         </Link>
                       </span>

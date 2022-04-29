@@ -16,7 +16,7 @@ function AuthorSectionComponent(props) {
               <div className="overlay" />
               <div
                 className="img d-flex align-self-stretch align-items-center"
-                style={{ backgroundImage: "url(images/pmt.jpeg)" }}
+                style={{ backgroundImage: "url(/images/pmt.jpeg)" }}
               ></div>
             </div>
           </div>

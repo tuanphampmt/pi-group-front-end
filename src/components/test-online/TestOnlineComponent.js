@@ -103,7 +103,7 @@ function TestOnlineComponent(props) {
                   <div>
                     <div>
                       <img
-                        src="images/cau-hoi.png"
+                        src="/images/cau-hoi.png"
                         alt="khoa-vd-vdc-toan"
                         width="100%"
                       ></img>

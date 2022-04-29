@@ -11,6 +11,7 @@ import {
   sendEmailVerification,
   GoogleAuthProvider,
   signInWithPopup,
+  FacebookAuthProvider
 } from "firebase/auth";
 import { collection, addDoc, query, getDocs, where } from "firebase/firestore";
 import NavbarPublic from "../navbar/NavbarPublic";
@@ -24,6 +25,7 @@ function RegisterFormComponent(props) {
   const [successMessage, setSuccessMessage] = useState("");
   let navigate = useNavigate();
   const googleProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
 
   const validatePassword = () => {
     if (password === "" || confirmPassword === "") {
@@ -110,6 +112,38 @@ function RegisterFormComponent(props) {
       setError(err.message);
     }
   };
+
+  const signInWithFacebook = async (event) => {
+    event.preventDefault();
+    setError("");
+    try {
+      const res = await signInWithPopup(auth, facebookProvider);
+      const user = res.user;
+      console.log(user);
+      if (res.user && res.user.accessToken) {
+        const q = query(collection(db, "users"), where("uid", "==", user.uid));
+        const docs = await getDocs(q);
+        if (docs.docs.length === 0) {
+          await addDoc(collection(db, "users"), {
+            uid: user.uid,
+            name: user.displayName,
+            authProvider: "facebook",
+            email: user.email,
+          });
+        }
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ email: user.email, name: user.displayName })
+        );
+        localStorage.setItem("access-token", JSON.stringify(res.user.accessToken));
+        navigate("/home");
+      }
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    }
+  };
+  
   return (
     <>
       <NavbarPublic />
@@ -220,12 +254,14 @@ function RegisterFormComponent(props) {
                       — or login with —
                     </span>
                     <div className="social-login">
-                      <a href="#facebook" className="facebook">
+                    <a
+                        href="#facebook"
+                        className="facebook"
+                        onClick={signInWithFacebook}
+                      >
                         <i className="fa-brands fa-facebook-f"></i>
                       </a>
-                      <a href="#twitter" className="twitter">
-                        <i className="fa-brands fa-twitter"></i>
-                      </a>
+            
                       <a
                         href="#google"
                         className="google"

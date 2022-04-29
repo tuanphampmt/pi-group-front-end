@@ -8,7 +8,11 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../common/config/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import NavbarPublic from "../navbar/NavbarPublic";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { query, getDocs, collection, where, addDoc } from "firebase/firestore";
 
 function LoginFormComponent(props) {
@@ -17,6 +21,7 @@ function LoginFormComponent(props) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const googleProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
 
   let navigate = useNavigate();
 
@@ -36,34 +41,68 @@ function LoginFormComponent(props) {
     return true;
   };
 
+  const signInWithFacebook = async (event) => {
+    event.preventDefault();
+    setError("");
+    try {
+      const res = await signInWithPopup(auth, facebookProvider);
+      const user = res.user;
+      console.log(user);
+      if (res.user && res.user.accessToken) {
+        const q = query(collection(db, "users"), where("uid", "==", user.uid));
+        const docs = await getDocs(q);
+        if (docs.docs.length === 0) {
+          await addDoc(collection(db, "users"), {
+            uid: user.uid,
+            name: user.displayName,
+            authProvider: "facebook",
+            email: user.email,
+          });
+        }
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ email: user.email, name: user.displayName })
+        );
+        localStorage.setItem("access-token", JSON.stringify(res.user.accessToken));
+        navigate("/home");
+      }
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    }
+  };
+
   const signInWithGoogle = async (event) => {
     event.preventDefault();
     setError("");
     try {
       const res = await signInWithPopup(auth, googleProvider);
       const user = res.user;
-      const q = query(collection(db, "users"), where("uid", "==", user.uid));
-      const docs = await getDocs(q);
-      if (docs.docs.length === 0) {
-        await addDoc(collection(db, "users"), {
-          uid: user.uid,
-          name: user.displayName,
-          authProvider: "google",
-          email: user.email,
-        });
+      if (res.user && res.user.accessToken) {
+        const q = query(collection(db, "users"), where("uid", "==", user.uid));
+        const docs = await getDocs(q);
+        if (docs.docs.length === 0) {
+          await addDoc(collection(db, "users"), {
+            uid: user.uid,
+            name: user.displayName,
+            authProvider: "google",
+            email: user.email,
+          });
+        }
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ email: user.email, name: user.displayName })
+        );
+
+        localStorage.setItem(
+          "access-token",
+          JSON.stringify(res.user.accessToken)
+        );
+        navigate("/home");
       }
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ email: user.email, name: user.displayName })
-      );
-      localStorage.setItem(
-        "access-token",
-        JSON.stringify(res.user.accessToken)
-      );
-      navigate("/home");
     } catch (err) {
       console.error(err);
-      setError("Tài khoản của bạn chưa được xác thực.");
+      setError(err.message);
     }
   };
 
@@ -84,7 +123,10 @@ function LoginFormComponent(props) {
             setError("Tài khoản của bạn chưa được xác thực.");
           }
         })
-        .catch((err) => setError(err.message));
+        .catch((err) => {
+          console.error(err);
+          setError(err.message);
+        });
     }
   };
 
@@ -173,11 +215,12 @@ function LoginFormComponent(props) {
                       — or login with —
                     </span>
                     <div className="social-login">
-                      <a href="#facebook" className="facebook">
+                      <a
+                        href="#facebook"
+                        className="facebook"
+                        onClick={signInWithFacebook}
+                      >
                         <i className="fa-brands fa-facebook-f"></i>
-                      </a>
-                      <a href="#twitter" className="twitter">
-                        <i className="fa-brands fa-twitter"></i>
                       </a>
                       <a
                         href="#google"

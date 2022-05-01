@@ -63,7 +63,10 @@ function LoginFormComponent(props) {
           "user",
           JSON.stringify({ email: user.email, name: user.displayName })
         );
-        localStorage.setItem("access-token", JSON.stringify(res.user.accessToken));
+        localStorage.setItem(
+          "access-token",
+          JSON.stringify(res.user.accessToken)
+        );
         navigate("/user/home");
       }
     } catch (err) {
@@ -113,7 +116,10 @@ function LoginFormComponent(props) {
       signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
           if (res.user && res.user.accessToken && res.user.emailVerified) {
-            localStorage.setItem("user", JSON.stringify(res.user.email));
+            localStorage.setItem(
+              "user",
+              JSON.stringify({ email: res.user.email })
+            );
             localStorage.setItem(
               "access-token",
               JSON.stringify(res.user.accessToken)
@@ -200,7 +206,10 @@ function LoginFormComponent(props) {
                         </Link>
                       </span>
                       <span className="ml-auto">
-                        <Link to="/user/forgot-password" className="forgot-pass">
+                        <Link
+                          to="/user/forgot-password"
+                          className="forgot-pass"
+                        >
                           Lấy lại mật khẩu
                         </Link>
                       </span>

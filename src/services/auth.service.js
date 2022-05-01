@@ -1,5 +1,13 @@
 import jwt_decode from "jwt-decode";
 
+const getCurrentUser = () => {
+  const token =
+    JSON.parse(localStorage.getItem("user")) &&
+    JSON.parse(localStorage.getItem("access-token"));
+  if (token) {
+    return JSON.parse(localStorage.getItem("user"));
+  }
+};
 const checkTokenExpirationMiddleware = () => {
   const token =
     JSON.parse(localStorage.getItem("user")) &&
@@ -11,4 +19,4 @@ const checkTokenExpirationMiddleware = () => {
   return true;
 };
 
-export { checkTokenExpirationMiddleware };
+export { checkTokenExpirationMiddleware, getCurrentUser};

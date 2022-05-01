@@ -10716,7 +10716,7 @@ h5,
   padding: 0;
 }
 .ftco-navbar-light .navbar-brand {
-  color: #000000;
+  color: #000000 !important;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
 }
@@ -10726,7 +10726,7 @@ h5,
 }
 @media (max-width: 991.98px) {
   .ftco-navbar-light .navbar-brand {
-    color: #fff;
+    color: #fff !important;
   }
 }
 @media (max-width: 991.98px) {
@@ -10741,7 +10741,7 @@ h5,
   padding-bottom: 0.7rem;
   padding-left: 20px;
   padding-right: 20px;
-  color: #051441;
+  color: #051441 !important;
   font-weight: 600;
   opacity: 1 !important;
 }
@@ -10789,7 +10789,7 @@ h5,
     padding-right: 0;
     padding-bottom: 1rem;
     padding-top: 0;
-    color: #fff;
+    color: #fff !important; 
   }
 }
 .ftco-navbar-light .navbar-nav > .nav-item.cta > a {
@@ -10869,6 +10869,9 @@ h5,
     padding-right: 0 !important;
     padding-bottom: 20px !important;
   }
+  .ftco-navbar-light .navbar-toggler {
+    color: #ffffff !important;
+  }
 }
 .ftco-navbar-light.scrolled .nav-item.active > a {
   color: #17b978 !important;
@@ -10930,7 +10933,7 @@ h5,
   transition: 0.3s all ease-out;
 }
 .ftco-navbar-light.scrolled .navbar-brand {
-  color: #000000;
+  color: #000000 !important;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 24px;
@@ -10943,7 +10946,7 @@ h5,
   z-index: 0;
   font-family: "Raleway", sans-serif;
 }
-.navbar-brand span {
+.navbar-brand sup {
   color: #17b978;
 }
 
@@ -10968,6 +10971,7 @@ h5,
   .hero-wrap .overlay {
     opacity: 0.5;
   }
+
 }
 .hero-wrap .slider-text {
   height: 750px;

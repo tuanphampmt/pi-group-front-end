@@ -11,8 +11,8 @@ function NavbarComponent(props) {
       id="ftco-navbar"
     >
       <div className="container">
-      <a className="navbar-brand" href="/home">
-            Pi Group<span>.</span>
+      <a className="navbar-brand" href="/user/home">
+            Pi Group<sup>3.14</sup>
           </a>
         <button
           className="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"

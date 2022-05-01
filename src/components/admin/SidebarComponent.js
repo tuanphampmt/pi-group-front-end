@@ -1,3 +1,4 @@
+import { borderRadius } from "@mui/system";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -19,8 +20,8 @@ function SidebarComponent(props) {
         className="sidebar-brand d-flex align-items-center justify-content-center"
         href="index.html"
       >
-        <div className="sidebar-brand-icon rotate-n-15">
-          <i className="fas fa-laugh-wink" />
+        <div className="sidebar-brand-icon" style={{width: "40px"}}> 
+          <img src="/images/logo-pi.jpeg" style={{width: "100%", borderRadius: "50%"}}></img>
         </div>
         <div className="sidebar-brand-text mx-3">
           Pi Group <sup>3.14</sup>

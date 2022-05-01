@@ -2,14 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { checkTokenExpirationMiddleware } from "../../services/auth.service";
 import { signOut } from "firebase/auth";
-import { auth } from "../../common/config/firebaseConfig";
+import AccountMenu from "../navbar/AccountMenu";
 function HeroWrapComponent(props) {
   const authService = checkTokenExpirationMiddleware();
 
-  const logout = () => {
-    signOut(auth);
-    localStorage.clear();
-  };
   return (
     <section className="hero-wrap js-fullheight">
       <div className="overlay" />
@@ -32,13 +28,7 @@ function HeroWrapComponent(props) {
                 gắn liền với “sự hoàn hảo, niềm đam mê và trách nhiệm".
               </p>
               {authService ? (
-                <Link
-                  to="/user/login"
-                  className="btn btn-primary py-3 px-4"
-                  onClick={logout}
-                >
-                  Đăng xuất
-                </Link>
+                <AccountMenu/>
               ) : (
                 <Link to="/user/login" className="btn btn-primary py-3 px-4">
                   Đăng nhập
